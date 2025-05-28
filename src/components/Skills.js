@@ -27,20 +27,28 @@ const SkillList = styled.div`
   justify-content: center;
   gap: 2rem;
   margin-top: 1rem;
+
+  @media (max-width: 480px) {
+    gap: 1rem;
+    justify-content: space-around;
+  }
 `;
 
 const Skill = styled.div`
   background-color: #333;
   padding: 1rem;
   border-radius: 12px;
-  width: 140px;
+  flex: 0 1 140px;
+  max-width: 140px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media (max-width: 480px) {
-    width: 110px;
+    flex: 0 1 45%;
+    max-width: 45%;
     padding: 0.75rem;
+    box-sizing: border-box;
   }
 `;
 

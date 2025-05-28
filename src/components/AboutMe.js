@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Section = styled.section`
-  padding: 4rem 2rem;        /* Increased vertical padding */
+  padding: 4rem 2rem;
   background-color: #222;
   color: white;
   text-align: center;
@@ -12,19 +12,43 @@ const Section = styled.section`
 
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* Vertically center content */
-  align-items: center;       /* Horizontally center content */
-  min-height: 300px;         /* Ensure minimum height */
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+    max-width: 90%;
+    min-height: auto;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+  }
 `;
 
 const Title = styled.h2`
   margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+
+  @media (max-width: 480px) {
+    font-size: 1.8rem;
+  }
 `;
 
 const Paragraph = styled.p`
   line-height: 1.8;
   font-size: 1.2rem;
   max-width: 600px;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 const AboutMe = () => (

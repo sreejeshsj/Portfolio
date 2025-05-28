@@ -1,4 +1,3 @@
-// File: src/components/Education.js
 import React from 'react';
 import styled from 'styled-components';
 import { FaGraduationCap } from 'react-icons/fa';
@@ -10,6 +9,11 @@ const Section = styled.section`
   text-align: center;
   border-radius: 20px;
   margin: 2rem;
+
+  @media (max-width: 480px) {
+    margin: 1rem;
+    padding: 1.5rem 1rem;
+  }
 `;
 
 const EduItem = styled.div`
@@ -22,12 +26,22 @@ const EduItem = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 90%;
+  }
 `;
 
 const IconWrapper = styled.div`
-  color: #4caf50; /* You can customize icon color */
+  color: #4caf50;
   font-size: 2rem;
   flex-shrink: 0;
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Education = () => (

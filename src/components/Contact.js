@@ -1,4 +1,3 @@
-// Contact.js
 import React, { useState } from "react";
 import styled from "styled-components";
 import emailjs from "emailjs-com";
@@ -17,18 +16,26 @@ const Form = styled.form`
   max-width: 400px;
   margin: 2rem auto;
   gap: 1rem;
+
+  @media (max-width: 480px) {
+    max-width: 90%;
+    margin: 1rem auto;
+  }
 `;
 
 const Input = styled.input`
   padding: 0.8rem;
   border-radius: 8px;
   border: none;
+  font-size: 1rem;
 `;
 
 const TextArea = styled.textarea`
   padding: 0.8rem;
   border-radius: 8px;
   border: none;
+  font-size: 1rem;
+  resize: vertical;
 `;
 
 const Button = styled.button`
@@ -38,6 +45,11 @@ const Button = styled.button`
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 1.1rem;
+
+  &:hover {
+    background-color: #666;
+  }
 `;
 
 const IconRow = styled.div`
@@ -45,6 +57,11 @@ const IconRow = styled.div`
   justify-content: center;
   gap: 1.5rem;
   margin-top: 1.5rem;
+
+  @media (max-width: 480px) {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
 `;
 
 const Contact = () => {

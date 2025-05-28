@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
-// Import icons from react-icons
 import { SiHtml5, SiCss3, SiJavascript, SiReact, SiPython, SiMysql, SiGithub } from 'react-icons/si';
 
 const skillsData = [
@@ -39,6 +37,11 @@ const Skill = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 480px) {
+    width: 110px;
+    padding: 0.75rem;
+  }
 `;
 
 const SkillName = styled.div`
@@ -48,6 +51,11 @@ const SkillName = styled.div`
   align-items: center;
   gap: 0.5rem;
   justify-content: center;
+  font-size: 1rem;
+
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+  }
 `;
 
 const Svg = styled.svg`
@@ -55,6 +63,11 @@ const Svg = styled.svg`
   width: 100px;
   height: 100px;
   position: relative;
+
+  @media (max-width: 480px) {
+    width: 80px;
+    height: 80px;
+  }
 `;
 
 const CircleBackground = styled.circle`
@@ -79,18 +92,26 @@ const Percentage = styled.div`
   font-weight: bold;
   font-size: 1rem;
   color: white;
+
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+  }
 `;
 
 const SvgContainer = styled.div`
   position: relative;
   width: 100px;
   height: 100px;
+
+  @media (max-width: 480px) {
+    width: 80px;
+    height: 80px;
+  }
 `;
 
 const radius = 45;
 const circumference = 2 * Math.PI * radius;
 
-// Dynamic color based on level
 const getColor = (level) => {
   if (level > 80) return '#4caf50';  // Green
   if (level > 60) return '#ffc107';  // Yellow
@@ -105,9 +126,9 @@ const Skills = () => (
         const offset = circumference - (level / 100) * circumference;
         const color = getColor(level);
         return (
-          <Skill key={name}>
+          <Skill key={name} aria-label={`${name} skill level is ${level} percent`} role="img" title={`${name}: ${level}%`}>
             <SvgContainer>
-              <Svg>
+              <Svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
                 <CircleBackground r={radius} cx="50" cy="50" />
                 <CircleProgress
                   r={radius}

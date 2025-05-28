@@ -51,7 +51,7 @@ const Hero = () => (
 </button>
 
       <a
-        href="/Sreejesh_A_resume.pdf"
+        href={`${process.env.PUBLIC_URL}/Sreejesh_A_resume.pdf`}
         download
         style={{
           marginTop: '1rem',

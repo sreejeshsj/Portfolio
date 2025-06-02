@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SiHtml5, SiCss3, SiJavascript, SiReact, SiPython, SiMysql, SiGithub } from 'react-icons/si';
+import {
+  SiHtml5, SiCss3, SiJavascript, SiReact, SiPython,
+  SiMysql, SiGithub, SiDjango
+} from 'react-icons/si';
+import { FaServer } from 'react-icons/fa'; // REST API icon
 
 const skillsData = [
   { name: "HTML", level: 90, icon: <SiHtml5 color="#E34F26" size={20} /> },
@@ -8,6 +12,8 @@ const skillsData = [
   { name: "JavaScript", level: 80, icon: <SiJavascript color="#F7DF1E" size={20} /> },
   { name: "React", level: 90, icon: <SiReact color="#61DAFB" size={20} /> },
   { name: "Python", level: 90, icon: <SiPython color="#3776AB" size={20} /> },
+  { name: "Django", level: 85, icon: <SiDjango color="#092E20" size={20} /> },
+  { name: "REST API", level: 80, icon: <FaServer color="#0db7ed" size={20} /> },
   { name: "SQL", level: 80, icon: <SiMysql color="#4479A1" size={20} /> },
   { name: "Git & GitHub", level: 80, icon: <SiGithub color="#181717" size={20} /> },
 ];
